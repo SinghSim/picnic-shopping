@@ -29,6 +29,7 @@ python3 ~/.openclaw/workspace/skills/picnic-shopping/scripts/picnic.py <tool_nam
 | `picnic_get_cart` | `{}` | View current cart |
 | `picnic_clear_cart` | `{}` | Empty the cart |
 | `picnic_get_delivery_slots` | `{}` | List available delivery windows |
+| `picnic_set_delivery_slot` | `{"slotId": "..."}` | Reserve a delivery slot |
 | `picnic_get_user_details` | `{}` | Simon's account info |
 | `picnic_get_deliveries` | `{"limit": 5}` | Past/current deliveries |
 
