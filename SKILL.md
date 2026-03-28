@@ -54,6 +54,26 @@ python3 scripts/picnic.py picnic_search '{"query": "havermelk", "limit": 5}'
 python3 scripts/picnic.py picnic_add_to_cart '{"productId": "s1010217", "count": 2}'
 ```
 
+## Workflow: Selecting a Delivery Slot
+
+1. **Fetch slots**: `picnic_get_delivery_slots`
+2. **Present options** to Simon in readable format (day, time window, cut-off)
+3. **Simon picks** a preferred slot (or says "earliest" / "tomorrow afternoon" etc.)
+4. **Set the slot**: `picnic_set_delivery_slot {"slotId": "..."}`
+5. **Remind Simon** to open the Picnic app to confirm & pay — checkout is not automatable
+
+### Slot display format
+
+Show slots grouped by day, with 1-hour windows preferred over wider windows:
+```
+📦 Available delivery slots:
+
+Sun 29 Mar:  14:40–15:40  (order by 23:00 tonight)
+Mon 30 Mar:  08:00–09:00  |  17:25–18:25
+Tue 31 Mar:  10:45–11:45  |  14:40–15:40  |  20:10–21:10
+...
+```
+
 ## Notes
 
 - Search uses Dutch product names; translate before searching
